@@ -19,17 +19,14 @@ class ToysContainer extends React.Component {
         ]
     }
     render() {
-        console.log(this.props)
+        
         return (
-           
-            <div>
+           <div>
                 {this.state.toys.map(toyObj => (
                     <ToyCard name={toyObj.name} key={toyObj.name} image={toyObj.image} />
                 ))}
                 <li> {this.props.search}</li>
-               
-
-            </div>
+          </div>
         )
 
     }

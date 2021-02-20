@@ -10,18 +10,17 @@ class App extends Component {
         search:""
     }
 
-    changeStateValue = string =>{
-        this.setState({
-            search: string
-        })
+    searchValue = string =>{
+        console.log(string)
+        this.setState({ search: string }, () => console.log(this.state))
     }
     
     render() {
         return (
             <div className="App">
                 <ToyHeader/>
-                <SearchBar />
-                <ToysContainer search={this.state.search} searchValue={this.searchValue}/>
+                <SearchBar searchValue={this.searchValue} />
+                <ToysContainer search={this.state.search} />
             </div>
         )
     }

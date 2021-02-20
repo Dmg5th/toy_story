@@ -14,12 +14,13 @@ class SearchBar extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault(); 
-        
+        let value = e.target["toy-input"].value;
+        let search = this.props.searchValue(value)
         this.setState({
             search:""
         })
     }
-    
+     
     
     render() {
         return (
