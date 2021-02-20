@@ -19,6 +19,12 @@ class ToysContainer extends React.Component {
         ]
     }
 
+    // componentDidMount(){
+    //     fetch("url")
+    //     .then(resp => resp.json)
+    //     .then(data => this.setState ({toys: data}))
+    // }
+
     renderToys = () => {
         if (this.props.search === '') {
             return this.state.toys.map(toyObj => <ToyCard name={toyObj.name} key={toyObj.name} image={toyObj.image}/> )
