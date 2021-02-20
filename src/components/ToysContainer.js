@@ -10,7 +10,8 @@ class ToysContainer extends React.Component {
         },
         {
             name: "BuzzLightyear",
-            image: "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png"},
+            image: "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png"
+        },
         {
             name: "Mr.PotatoHead",
             image: "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217"
@@ -18,14 +19,22 @@ class ToysContainer extends React.Component {
         ]
     }
     render() {
+        console.log(this.props)
         return (
-            <div id="toy-container">
-                <ToyCard name="Woody" img="http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png" />
-                <ToyCard name="BuzzLightyear" img="http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png" />
-                <ToyCard name="Mr. PotatoHead" img="https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217" />
+           
+            <div>
+                {this.state.toys.map(toyObj => (
+                    <ToyCard name={toyObj.name} key={toyObj.name} image={toyObj.image} />
+                ))}
+                <li> {this.props.search}</li>
+               
+
             </div>
         )
+
     }
+
 }
 
 export default ToysContainer; 
+
