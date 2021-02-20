@@ -6,16 +6,18 @@ import ToysContainer from './components/ToysContainer';
 
 class App extends Component {
 
-    state= {
-        search:""
+    state = {
+        search: ""
     }
 
-    searchValue = string =>{
-        console.log(string)
-        this.setState({ search: string }, () => console.log(this.state))
+    searchValue = string => {
+        this.setState({
+            search: string
+        })
     }
-    
+
     render() {
+        
         return (
             <div className="App">
                 <ToyHeader/>

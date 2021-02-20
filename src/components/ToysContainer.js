@@ -18,14 +18,22 @@ class ToysContainer extends React.Component {
         }
         ]
     }
+
+    renderToys = () => {
+        if (this.props.search === '') {
+            return this.state.toys.map(toyObj => <ToyCard name={toyObj.name} key={toyObj.name} image={toyObj.image}/> )
+        } else {
+            return this.state.toys.filter(toyObj => toyObj.name.includes(this.props.search)).map(toyObj => <ToyCard name={toyObj.name} key={toyObj.name} image={toyObj.image}/>)
+        }
+    }
+
+       
+    
     render() {
         
         return (
-           <div>
-                {this.state.toys.map(toyObj => (
-                    <ToyCard name={toyObj.name} key={toyObj.name} image={toyObj.image} />
-                ))}
-                <li> {this.props.search}</li>
+           <div id="toy-container">
+               {this.renderToys()}
           </div>
         )
 
@@ -34,4 +42,7 @@ class ToysContainer extends React.Component {
 }
 
 export default ToysContainer; 
+
+
+
 
